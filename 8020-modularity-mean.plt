@@ -11,7 +11,8 @@ set style textbox opaque noborder
 set xtics rotate by 45 right
 set format x "10^{%L}"
 set grid y
-set yrange [0.4:1]
+set xrange [:1e-1]
+set yrange [0.5:1]
 set key above font ",12"
 
 
@@ -28,10 +29,10 @@ set logscale x 10
 set xlabel  '{/:Bold Batch fraction}'
 set ylabel  '{/:Bold Modularity}'
 plot '8020.csv' \
-     using 4:($9 ) title 'Static' linestyle  1 with linespoints, \
-  '' using 4:($10) title 'ND'     linestyle  2 with linespoints, \
-  '' using 4:($11) title 'DT'     linestyle  3 with linespoints, \
-  '' using 4:($12) title 'DF'     linestyle  4 with linespoints
+     using 4:($17) title 'Static' linestyle  1 with linespoints, \
+  '' using 4:($18) title 'ND'     linestyle  2 with linespoints, \
+  '' using 4:($19) title 'DT'     linestyle  3 with linespoints, \
+  '' using 4:($20) title 'DF'     linestyle  4 with linespoints
 
 
 
@@ -41,15 +42,19 @@ plot '8020.csv' \
 # 02. batch_deletions_fraction
 # 03. batch_insertions_fraction
 # 04. batch_fraction
-# 05. sta-t
-# 06. nai-t
-# 07. del-t
-# 08. fro-t
-# 09. sta-m
-# 10. nai-m
-# 11. del-m
-# 12. fro-m
-# 13. sta-s
-# 14. nai-s
-# 15. del-s
-# 16. fro-s
+# 05. lousta-t
+# 06. lounai-t
+# 07. loudel-t
+# 08. loufro-t
+# 09. leista-t
+# 10. leinai-t
+# 11. leidel-t
+# 12. leifro-t
+# 13. lousta-m
+# 14. lounai-m
+# 15. loudel-m
+# 16. loufro-m
+# 17. leista-m
+# 18. leinai-m
+# 19. leidel-m
+# 20. leifro-m
