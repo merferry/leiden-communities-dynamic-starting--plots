@@ -16,8 +16,9 @@ set logscale x 10
 set logscale y 2
 set format x "10^{%L}"
 set grid   y
+set xrange [:1e-1]
 set key off
-set multiplot layout 3,4 margins 0.06,0.98,0.10,0.95 spacing 0.06,0.07
+set multiplot layout 3,4 margins 0.065,0.98,0.10,0.95 spacing 0.06,0.07
 # set xlabel  'Batch fraction'
 # set ylabel  'Runtime (s)'
 
@@ -38,10 +39,10 @@ do for [i=1:words(files)] {
 set title word(files, i) offset 0,-0.8
 if (i>=9) { set xtics rotate by 45 right }
 plot '8020/'.word(files, i).'.csv' \
-       using 4:($5 /1000) title 'Static' linestyle 1 with linespoints, \
-    '' using 4:($6 /1000) title 'ND'     linestyle 2 with linespoints, \
-    '' using 4:($7 /1000) title 'DT'     linestyle 3 with linespoints, \
-    '' using 4:($8 /1000) title 'DF'     linestyle 4 with linespoints
+       using 4:($9 /1000) title 'Static' linestyle 1 with linespoints, \
+    '' using 4:($10/1000) title 'ND'     linestyle 2 with linespoints, \
+    '' using 4:($11/1000) title 'DT'     linestyle 3 with linespoints, \
+    '' using 4:($12/1000) title 'DF'     linestyle 4 with linespoints
 }
 unset multiplot
 

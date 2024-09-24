@@ -14,8 +14,9 @@ set tmargin 1
 unset xtics
 set logscale x 10
 set format x "10^{%L}"
-set yrange [0.4:1]
-set ytics 0.2
+set xrange [:1e-1]
+set yrange [0.5:1]
+set ytics 0.1
 set grid   y
 set key off
 set multiplot layout 3,4 margins 0.06,0.98,0.10,0.95 spacing 0.06,0.07
@@ -39,10 +40,10 @@ do for [i=1:words(files)] {
 set title word(files, i) offset 0,-0.8
 if (i>=9) { set xtics rotate by 45 right }
 plot '8020/'.word(files, i).'.csv' \
-       using 4:($9 ) title 'Static' linestyle 1 with linespoints, \
-    '' using 4:($10) title 'ND'     linestyle 2 with linespoints, \
-    '' using 4:($11) title 'DT'     linestyle 3 with linespoints, \
-    '' using 4:($12) title 'DF'     linestyle 4 with linespoints
+       using 4:($17) title 'Static' linestyle 1 with linespoints, \
+    '' using 4:($18) title 'ND'     linestyle 2 with linespoints, \
+    '' using 4:($19) title 'DT'     linestyle 3 with linespoints, \
+    '' using 4:($20) title 'DF'     linestyle 4 with linespoints
 }
 unset multiplot
 
