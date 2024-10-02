@@ -10,9 +10,10 @@ set style fill solid border lt -1
 set style textbox opaque noborder
 set xtics rotate by 45 right
 set format x "10^{%L}"
+set format y "%.2f"
 set grid y
 set xrange [:1e-1]
-set yrange [0.5:1]
+# set yrange [0.5:1]
 set key above font ",12"
 
 
@@ -31,7 +32,7 @@ set ylabel  '{/:Bold Modularity}'
 plot '8020.csv' \
      using 4:($17) title 'Static' linestyle  1 with linespoints, \
   '' using 4:($18) title 'ND'     linestyle  2 with linespoints, \
-  '' using 4:($19) title 'DT'     linestyle  3 with linespoints, \
+  '' using 4:($19) title 'DS'     linestyle  3 with linespoints, \
   '' using 4:($20) title 'DF'     linestyle  4 with linespoints
 
 

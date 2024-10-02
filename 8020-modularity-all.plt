@@ -14,12 +14,13 @@ set tmargin 1
 unset xtics
 set logscale x 10
 set format x "10^{%L}"
+set format y "%.2f"
 set xrange [:1e-1]
-set yrange [0.5:1]
-set ytics 0.1
+# set yrange [0.5:1]
+set ytics 0.02
 set grid   y
 set key off
-set multiplot layout 3,4 margins 0.06,0.98,0.10,0.95 spacing 0.06,0.07
+set multiplot layout 3,4 margins 0.07,0.98,0.10,0.95 spacing 0.06,0.07
 # set xlabel  'Batch fraction'
 # set ylabel  'Error'
 
